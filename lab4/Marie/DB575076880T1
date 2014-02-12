@@ -1,0 +1,32 @@
+ORG 100
+/Get the inputs
+	Input	A	/Get first input from keyboard
+	Store	A	/Store first input from AC to A
+	Input	B	/Get second input from keyboard
+	Store	B	/Store second input from AC to B
+
+/Compare the inputs
+DBif,	Load	A	/Load first input into AC
+	Subt	B	/Subtract B from AC
+	Skipcond	01	/If AC == 0, Skip Jump
+	Jump	DBelse	/Jump to DBelse
+
+DBthen,	Load	A	/Load A for doubling into AC
+	Output	A	/Display original value of AC
+	Add	A	/Add the value of A to the AC
+	Store	A	/Store the new value of A into address from AC
+	Output	A	/Display new value of AC
+	Jump	DBendif	/Jump to DBendif
+
+DBelse,	Load	B	/Load B into AC
+	Output	B	/Display old value of B
+	Subt	A	/Subtract the value of A from AC
+	Store	B	/Store the new value of B from AC
+	Output	B	/Output the new value of AC
+
+DBendif,	Halt	/Terminate
+
+A,	Dec 0
+B,	Dec 0
+
+END

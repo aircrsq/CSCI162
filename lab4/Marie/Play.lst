@@ -1,0 +1,49 @@
+     Assembly listing for: Play.mas
+                Assembled: Tue Feb 11 19:41:41 PST 2014
+
+         |          ORG 100            
+         |                            /Get the inputs
+100 5000 |          INPUT             /Get first input from keyboard
+101 2114 |          STORE X           /Store first input in address
+102 5000 |          INPUT             /Get second input from keyboard
+103 2115 |          STORE Y           /Store second input in address
+         |                            
+104 1114 |  dbif    LOAD X            /Load the first value	
+105 4115 |          SUBT Y            /Subtract the value of Y, store result in AC	
+106 8400 |          SKIPCOND 400      /If AC=0, skip the next instruction
+107 910E |          JUMP dbelse       /Jump to Else part if AC is not equal to 0	
+         |                            
+108 1114 |  dbthen  LOAD X            /Reload X so it can be doubled
+109 6000 |          OUTPUT            /Output old value of X
+10A 3114 |          ADD X             /Double X
+10B 2114 |          STORE X           /Store the new value
+10C 6000 |          OUTPUT            /Output new value of X
+10D 9113 |          JUMP dbendif      /Skip over the false, or else, part to end of if
+         |                            
+10E 1115 |  dbelse  LOAD Y            /Start the else part by loading Y
+10F 6000 |          OUTPUT            /Output old value of Y
+110 4114 |          SUBT X            /Subtract X from Y
+111 2115 |          STORE Y           /Store Y-X in Y
+112 6000 |          OUTPUT            /Output new value of X
+         |                            
+113 7000 |  dbendif HALT              /Terminate
+         |                            
+114 0000 |  X       DEC 0              
+115 0000 |  Y       DEC 0              
+         |          END                
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------
+          Symbol  | Defined | References 
+         ---------+---------+-------------------------------
+          X       |   114   | 101, 104, 108, 10A, 10B, 110
+          Y       |   115   | 103, 105, 10E, 111
+          dbelse  |   10E   | 107
+          dbendif |   113   | 10D
+          dbif    |   104   | 
+          dbthen  |   108   | 
+         ---------------------------------------------------
+
+

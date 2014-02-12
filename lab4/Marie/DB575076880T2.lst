@@ -1,0 +1,25 @@
+     Assembly listing for: DB575076880T2.mas
+                Assembled: Tue Feb 11 22:17:43 PST 2014
+
+         |         ORG 100           
+         |                          
+         |                          /Get input from keyboard
+100 5000 |  DBGet  INPUT            /Get the input from keyboard into AC
+101 2106 |         STORE X          /Store the value from AC into X
+102 8200 |         SKIPCOND 200     /Check if < 0
+103 9100 |         JUMP DBGet       /Call function from start
+104 6000 |         OUTPUT           /Display negative number
+105 9100 |         JUMP DBGet       /Call function from stary
+106 0000 |  X      DEC 0            /Declare decimal variable
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          DBGet  |   100   | 103, 105
+          X      |   106   | 101
+         --------------------------------------------------
+
+

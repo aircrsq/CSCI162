@@ -1,0 +1,30 @@
+ORG 100
+/Get the inputs
+	input 	X	/Get first input from keyboard
+	store 	X	/Store first input in address
+	input 	Y	/Get second input from keyboard
+	store 	Y	/Store second input in address
+
+dbif,	Load	 X	/Load the first value	
+	Subt	 Y	/Subtract the value of Y, store result in AC	
+	Skipcond 400	/If AC=0, skip the next instruction
+	Jump	 dbelse	/Jump to Else part if AC is not equal to 0	
+
+dbthen,	Load	 X	/Reload X so it can be doubled
+	Output	 X	/Output old value of X
+	Add	 X	/Double X
+	Store 	 X	/Store the new value
+	Output	 X	/Output new value of X
+	Jump 	 dbendif	/Skip over the false, or else, part to end of if
+
+dbelse,	Load	 Y	/Start the else part by loading Y
+	Output	 X	/Output old value of Y
+	Subt	 X	/Subtract X from Y
+	Store 	 Y	/Store Y-X in Y
+	Output	 X	/Output new value of X
+
+dbendif,	Halt		/Terminate
+
+	X, Dec 0
+	Y, Dec 0
+END

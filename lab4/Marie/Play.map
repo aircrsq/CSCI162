@@ -1,0 +1,10 @@
+ ------------------
+ Symbol  | Location
+ --------+---------
+ X       |   114
+ Y       |   115
+ dbelse  |   10E
+ dbendif |   113
+ dbif    |   104
+ dbthen  |   108
+

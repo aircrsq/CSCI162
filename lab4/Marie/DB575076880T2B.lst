@@ -1,0 +1,55 @@
+     Assembly listing for: DB575076880T2B.mas
+                Assembled: Wed Feb 12 10:12:54 PST 2014
+
+         |         ORG 100           
+         |                          
+100 5000 |         INPUT             
+101 2116 |         STORE X           
+102 9106 |         JUMP DBif         
+         |                          
+         |                          /Get input from keyboard
+103 5000 |  DBGet  INPUT            /Get the input from keyboard into AC
+104 2116 |         STORE X          /Store the value from AC into X
+105 9106 |         JUMP DBif        /Jump to if function
+         |                          
+106 1116 |  DBif   LOAD X           /Load the value of X into the AC
+107 8200 |         SKIPCOND 200     /Check if < 0
+108 8800 |         SKIPCOND 800     /Check if > 0
+109 910B |         JUMP DBout       /Call output function
+10A 9111 |         JUMP DBend       /Call end function
+         |                          
+10B 1116 |  DBout  LOAD X           /Load the value of X into the AC
+10C 8400 |         SKIPCOND 400     /Check if == 0
+10D 6000 |         OUTPUT           /Display negative number
+10E 9103 |         JUMP DBGet       /Call function from start
+10F 6000 |         OUTPUT           /Display negative number
+110 9103 |         JUMP DBGet       /Call function from start
+         |                          
+111 1116 |  DBend  LOAD X           /Load the value of X into the AC
+112 4117 |         SUBT Y           /Subtract the Sentinel value
+113 8400 |         SKIPCOND 400     /Check if == 0
+114 9103 |         JUMP DBGet       /Call function from start
+115 7000 |         HALT              
+         |                          
+116 0000 |  X      DEC 0            /Declare decimal variable
+117 22B8 |  Y      DEC 8888         /Sentinel Value
+         |                          
+         |                          /Marie regards negative numbers starting at -1 as FFFF and working it's way toward 0000 and the
+         |                          /negative number increases in magnitude
+         |                          
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          DBGet  |   103   | 10E, 110, 114
+          DBend  |   111   | 10A
+          DBif   |   106   | 102, 105
+          DBout  |   10B   | 109
+          X      |   116   | 101, 104, 106, 10B, 111
+          Y      |   117   | 112
+         --------------------------------------------------
+
+

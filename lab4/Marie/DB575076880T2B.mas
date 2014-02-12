@@ -1,0 +1,36 @@
+ORG 100
+
+Input
+Store X
+Jump DBif
+
+/Get input from keyboard
+DBGet,	Input		/Get the input from keyboard into AC
+	Store X		/Store the value from AC into X
+	Jump DBif	/Jump to if function
+
+DBif,	Load X		/Load the value of X into the AC
+	Skipcond 	200	/Check if < 0
+	SKipcond	800	/Check if > 0
+	Jump DBout	/Call output function
+	Jump DBend	/Call end function
+
+DBout,	Load X		/Load the value of X into the AC
+	Skipcond	400	/Check if == 0
+	Output		/Display negative number
+	Jump DBGet	/Call function from start
+	Output		/Display negative number
+	Jump DBGet	/Call function from start
+
+DBend,	Load X		/Load the value of X into the AC
+	Subt Y		/Subtract the Sentinel value
+	Skipcond	400	/Check if == 0
+	Jump DBGet	/Call function from start
+	Halt
+
+X,	Dec 0		/Declare decimal variable
+Y,	Dec 8888	/Sentinel Value
+
+/Marie regards negative numbers starting at -1 as FFFF and working it's way toward 0000 and the
+/negative number increases in magnitude
+
