@@ -1,0 +1,26 @@
+     Assembly listing for: lab4.mas
+                Assembled: Tue Feb 04 13:56:33 PST 2014
+
+000 1006 |  loop   LOAD X            
+001 3007 |         ADD Y             
+002 2006 |         STORE X           
+003 6000 |         OUTPUT            
+004 9000 |         JUMP loop         
+005 7000 |         HALT              
+006 0000 |  X      DEC 0             
+007 0002 |  Y      DEC 2             
+008 0000 |  Z      DEC 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          X      |   006   | 000, 002
+          Y      |   007   | 001
+          Z      |   008   | 
+          loop   |   000   | 004
+         --------------------------------------------------
+
+

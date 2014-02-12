@@ -1,0 +1,27 @@
+     Assembly listing for: ORG.mas
+                Assembled: Tue Feb 04 14:02:42 PST 2014
+
+         |         ORG 100           
+100 1106 |  loop   LOAD X            
+101 3107 |         ADD Y             
+102 2106 |         STORE X           
+103 6000 |         OUTPUT            
+104 9100 |         JUMP loop         
+105 7000 |         HALT              
+106 0000 |  X      DEC 0             
+107 0002 |  Y      DEC 2             
+108 0000 |  Z      DEC 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          X      |   106   | 100, 102
+          Y      |   107   | 101
+          Z      |   108   | 
+          loop   |   100   | 104
+         --------------------------------------------------
+
+

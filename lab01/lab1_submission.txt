@@ -1,0 +1,11 @@
+575076880, David Burneau, aircrsq@gmail.com
+
+Opened file successfully
+Searching for "Hello World"
+Found instance of "Hello World" at 688129 bytes into the file
+Found instance of "Hello World" at 1605645 bytes into the file
+Finished reading from file
+Thu Jan  9 20:15:35 PST 2014
+otter
+
+

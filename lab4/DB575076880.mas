@@ -1,0 +1,9 @@
+loop,	Load X
+	Add Y
+	Store X
+	Output X
+	Jump loop
+Halt
+X, Dec 0
+Y, Dec 2
+Z, Dec 0
