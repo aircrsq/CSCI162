@@ -1,0 +1,46 @@
+     Assembly listing for: DB575076880Asn2.mas
+                Assembled: Sat Feb 15 13:46:10 PST 2014
+
+         |         ORG 100           
+100 5000 |         INPUT            /Get input from user into AC
+101 2116 |         STORE D          /Store the requested loops from AC
+102 8800 |         SKIPCOND 800     /Check if greater than 0
+103 7000 |         HALT             /Stop
+104 9105 |         JUMP Crunch      /Let the counting begin
+         |                          
+105 1114 |  Crunch LOAD B           /Load the value of the second number into AC
+106 3113 |         ADD A            /Add the value of the previous number to AC
+107 2115 |         STORE C          /Store the result from AC
+108 6000 |         OUTPUT           /Display result from AC
+109 1113 |         LOAD A           /Load the previous number into AC
+10A 2114 |         STORE B          /Store the previous number from AC
+10B 1115 |         LOAD C           /Load the result into AC
+10C 2113 |         STORE A          /Store the result into previous number
+10D 1116 |         LOAD D           /Load the count
+10E 4117 |         SUBT E           /Subtract 1
+10F 2116 |         STORE D          /Store the count
+110 8400 |         SKIPCOND 400     /Check if count is zero
+111 9105 |         JUMP Crunch      /Loop back
+112 7000 |         HALT             /Stop
+         |                          
+113 0001 |  A      DEC 1            /Previous number
+114 0000 |  B      DEC 0            /Second Number
+115 0000 |  C      DEC 0            /Result
+116 0000 |  D      DEC 0            /Count
+117 0001 |  E      DEC 1            /Decrement
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   113   | 106, 109, 10C
+          B      |   114   | 105, 10A
+          C      |   115   | 107, 10B
+          Crunch |   105   | 104, 111
+          D      |   116   | 101, 10D, 10F
+          E      |   117   | 10E
+         --------------------------------------------------
+
+

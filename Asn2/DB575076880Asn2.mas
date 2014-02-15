@@ -1,0 +1,27 @@
+ORG 100
+	input		/Get input from user into AC
+	Store D		/Store the requested loops from AC
+	skipcond 800	/Check if greater than 0
+	Halt		/Stop
+	Jump Crunch	/Let the counting begin
+
+Crunch, 	Load B	/Load the value of the second number into AC
+	Add A		/Add the value of the previous number to AC
+	Store C		/Store the result from AC
+	Output		/Display result from AC
+	Load A		/Load the previous number into AC
+	Store B		/Store the previous number from AC
+	Load C		/Load the result into AC
+	Store A		/Store the result into previous number
+	Load D		/Load the count
+	Subt E		/Subtract 1
+	Store D		/Store the count
+	Skipcond 400	/Check if count is zero
+	Jump Crunch	/Loop back
+	Halt		/Stop
+
+A,	Dec 1		/Previous number
+B,	Dec 0		/Second Number
+C,	Dec 0		/Result
+D,	Dec 0		/Count
+E,	Dec 1		/Decrement
