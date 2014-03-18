@@ -1,0 +1,27 @@
+/*sum([], 0).*/
+/*sum([H], H).*/
+/*sum([H|T],X) :- sum(T,Tailsum), X is H+Tailsum.*/
+
+/*Typechecking*/
+/*sum([], 0).*/
+/*sum([H], H):- number(H).*/
+/*sum([H|T],X) :- number(H), sum(T,Tailsum), X is H+Tailsum.*/
+
+/*max([3, 19, 2, ... 70], X).*/
+
+
+max([],_).
+max([X|XS],C):-
+  X > XS,
+  max(XS,C),
+  C = 'greater'.
+
+max([X|XS],C):-
+  X >= XS,
+  max(XS,C),
+  C = 'greater-equal'.
+
+max([X|XS],C):-
+  X == XS,
+  max(XS,C),
+  C = 'equal'.

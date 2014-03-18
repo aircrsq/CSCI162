@@ -1,0 +1,9 @@
+/*Name: David Burneau		*/
+/*Student Number: 575076880	*/
+/*Calling program		*/
+/*max([3, 19, 2, ... 70], X).	*/
+
+max([H],H).
+max([H|T],H):- max(T,Y), H >=Y.
+max([H|T],N):- max(T,N), N > H.
+
