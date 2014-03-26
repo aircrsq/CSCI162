@@ -1,0 +1,23 @@
+david@david-EP121:~/CSCI162/Asn3$ gprolog
+GNU Prolog 1.3.0
+By Daniel Diaz
+Copyright (C) 1999-2007 Daniel Diaz
+| ?- [sudoku].
+compiling /home/david/CSCI162/Asn3/sudoku.pl for byte code...
+/home/david/CSCI162/Asn3/sudoku.pl compiled, 46 lines read - 4765 bytes written, 20 ms
+
+(4 ms) yes
+| ?- solve([_,_,4,_,_,2,_,3,2,_,_,_,_,4,_,1],Solution).
+
+Solution = [1,3,4,2,4,2,1,3,2,1,3,4,3,4,2,1]
+
+yes
+| ?- solve([_,_,3,_,_,4,_,2,2,_,_,_,_,3,_,1],Solution). 
+
+Solution = [1,2,3,4,3,4,1,2,2,1,4,3,4,3,2,1]
+
+yes
+| ?- 
+Prolog interruption (h for help) ? e
+david@david-EP121:~/CSCI162/Asn3$ 
+
