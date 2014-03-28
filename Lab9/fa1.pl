@@ -1,6 +1,6 @@
 % David Burneau 575076880
 % fa1
-% usage test1([0,1,1,0,1,1,0,0,1]).
+% usage fa1([0,1,1,0,1,1,0,0,1]).
 % usage generate(X).
 
 initial(5).
@@ -30,9 +30,9 @@ recognize1(Node1,String) :-
 traverse1(Label,[Label|Symbols],Symbols).
 
 % driver
-test1(Symbols) :-
+fa1(Symbols) :-
 	initial(Node),
 	recognize1(Node,Symbols).
 
 generate1(X) :-
-	test1(X).
+	fa1(X).

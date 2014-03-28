@@ -1,8 +1,6 @@
-% David Burneau 575076880
+% David Burneau
 % fa1
-% usage test1([0,1,1,0,1,1,0,0,1]).
-% usage generate(X).
-
+% usage fa([0,1,1,0,1,1,0,0,1])
 initial(5).
 final(1).
 final(2).
